@@ -84,7 +84,6 @@ print(f'[settings.py] PORT set to {PORT}')
 if "HOST_ADDRESS" not in os.environ:
     raise Exception("[settings.py] HOST_ADDRESS was not detected")
 HOST_ADDRESS = os.environ['HOST_ADDRESS']
-ALLOWED_HOSTS = [HOST_ADDRESS]
 
 print(f'[settings.py] HOST_ADDRESS set to {HOST_ADDRESS}')
 print(f'[settings.py] ALLOWED_HOSTS set to {ALLOWED_HOSTS}')
