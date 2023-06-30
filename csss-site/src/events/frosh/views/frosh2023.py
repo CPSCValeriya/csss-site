@@ -1,23 +1,23 @@
-from django.shortcuts import render, redirect
 from random import randrange
-from django.http import Http404
+
+from django.http import Http404, HttpResponseRedirect
+from django.shortcuts import render
 
 from events.frosh.views.create_frosh_context import create_frosh_context
 
 
 def index(request):
-    return render(request, 'frosh/2023/index.html', create_frosh_context())
+    return render(request, '/home/csss/Under-Construction1.jpg')
 
 
 def frosh(request):
-    return render(request, 'frosh/2023/frosh.html', create_frosh_context())
+    return render(request, '/home/csss/Under-Construction1.jpg')
 
 
 def secret(request):
-    test = randrange(0, 10)
-    if test < 7:
+    if randrange(0, 10) < 7:
         raise Http404('Not sure if there is a secret here. Please refresh your page and try again.')
-    return redirect('https://www.youtube.com/watch?v=dQw4w9WgXcQ', permanent=True)
+    return HttpResponseRedirect('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
 
 
 def sponsor(request):
